@@ -7,7 +7,7 @@ class bird : public animal {
     public:
         bird();
         bird(std:: string a, std:: string b, std:: string c, std:: string d);
-        bird(const bird & obg);
+        bird(const bird & obj);
         virtual ~bird();
 
         virtual std::string getgenus();
@@ -23,11 +23,15 @@ class bird : public animal {
 
         virtual std:: string getFIO();
         virtual void setFIO(std::string data);
+        virtual std:: string getname();
+        virtual void setname(std::string data);
 
         virtual void save(std::ofstream & file, bool bin = false);
         virtual void load(std::ifstream & file, bool bin = false);
 
         virtual void show();
+
+        virtual char gettype();
 
     private:
 

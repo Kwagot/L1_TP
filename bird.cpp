@@ -5,15 +5,16 @@ bird::bird() {
     color = "None";
     eat   = "None";
     home  = "None";
+    std::cout << "---------------- deffault constructor of <bird>" << std::endl;
 }
 
 
-bird::bird(std::string a, std::string b, std::string c, std::string d)
-{
+bird::bird(std::string a, std::string b, std::string c, std::string d) {
     genus = a;
     color = b;
     eat = c;
     home = d;
+    std::cout << "---------------- param constructor of <bird>" << std::endl;
 }
 
 bird::bird(const bird & obj) {
@@ -21,6 +22,11 @@ bird::bird(const bird & obj) {
     this->color = obj.color;
     this->eat   = obj.eat;
     this->home  = obj.home;
+    std::cout << "---------------- copy constructor of <bird>" << std::endl;
+}
+
+bird::~bird() {
+    std::cout << "---------------- destructor of <bird>" << std::endl;
 }
 
 std::string bird::getgenus(){
@@ -59,12 +65,29 @@ std::string bird::getFIO() {
     return "None";
 }
 
+std::string bird::getname() {
+    return "None";
+}
+
 void bird::setFIO(std::string data) {
 
 }
 
+void bird::setname(std::string data) {
+
+}
+
+
+char bird::gettype() {
+    return type;
+}
+
 void bird::show() {
-    std::cout << genus << '\n' << color << '\n' << eat << '\n' << home << std::endl;
+    std::cout << "BIRD:\n"
+    << "   Genus: " << genus << '\n'
+    << "   Color: " << color << '\n'
+    << "   Eat:   " << eat << '\n'
+    << "   Home:  " << home << std::endl;
 }
 
 void bird::save(std::ofstream &file, bool bin) {

@@ -7,7 +7,7 @@ class cat : public animal {
     public:
         cat();
         cat(std:: string a, std:: string b, std:: string c, std:: string d);
-        cat(const cat & obg);
+        cat(const cat & obj);
         virtual ~cat();
 
         virtual std:: string getgenus();
@@ -31,6 +31,7 @@ class cat : public animal {
 
         virtual void show();
 
+        virtual char gettype();
     private:
 
         std:: string genus;

@@ -4,6 +4,7 @@ fish::fish() {
     genus = "None";
     color = "None";
     eat   = "None";
+    std::cout << "---------------- deffault constructor of <fish>" << std::endl;
 }
 
 
@@ -11,13 +12,20 @@ fish::fish(std:: string a, std:: string b, std:: string c) {
     genus = a;
     color = b;
     eat   = c;
+    std::cout << "---------------- param constructor of <fish>" << std::endl;
 }
 
 fish::fish(const fish & obj) {
     this->genus = obj.genus;
     this->color = obj.color;
     this->eat   = obj.eat;
+    std::cout << "---------------- copy constructor of <fish>" << std::endl;
 }
+
+fish::~fish() {
+    std::cout << "---------------- destructor of <fish>" << std::endl;
+}
+
 
 std::string fish::getgenus(){
     return genus;
@@ -51,6 +59,9 @@ void fish::sethome(std::string data){
 void fish::setFIO(std::string data){
 }
 
+void fish::setname(std::string data){
+}
+
 std::string fish::gethome(){
     return "None";
 }
@@ -59,8 +70,19 @@ std::string fish::getFIO(){
     return "None";
 }
 
+std::string fish::getname(){
+    return "None";
+}
+
+char fish::gettype() {
+    return type;
+}
+
 void fish::show() {
-    std::cout << genus << '\n' << color << '\n' << eat << std::endl;
+    std::cout << "FISH:\n"
+    << "   Genus: " << genus << '\n'
+    << "   Color: " << color << '\n'
+    << "   Eat:   " << eat   << std::endl;
 }
 
 void fish::save(std::ofstream &file, bool bin) {

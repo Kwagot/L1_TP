@@ -5,6 +5,7 @@ cat::cat() {
     color = "None";
     FIO   = "None";
     name  = "None";
+    std::cout << "---------------- deffault constructor of <cat>" << std::endl;
 }
 
 cat::cat(std:: string a, std:: string b, std:: string c, std:: string d) {
@@ -12,6 +13,7 @@ cat::cat(std:: string a, std:: string b, std:: string c, std:: string d) {
     color = b;
     FIO   = c;
     name  = d;
+    std::cout << "---------------- param constructor of <cat>" << std::endl;
 }
 
 cat::cat(const cat & obj) {
@@ -19,6 +21,11 @@ cat::cat(const cat & obj) {
     this->color = obj.color;
     this->FIO   = obj.FIO;
     this->name  = obj.name;
+    std::cout << "---------------- copy constructor of <cat>" << std::endl;
+}
+
+cat::~cat() {
+    std::cout << "---------------- destructor of <cat>" << std::endl;
 }
 
 std::string cat::getgenus(){
@@ -67,8 +74,16 @@ std::string cat::gethome(){
     return "None";
 }
 
+char cat::gettype() {
+    return type;
+}
+
 void cat::show() {
-    std::cout << genus << '\n' << color << '\n' << FIO << '\n' << name << std::endl;
+    std::cout << "CAT:\n"
+    << "   Genus: " << genus << '\n'
+    << "   Color: " << color << '\n'
+    << "   FIO:   " << FIO << '\n'
+    << "   Name:  " << name << std::endl;
 }
 
 void cat::save(std::ofstream &file, bool bin) {

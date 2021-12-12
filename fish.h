@@ -7,7 +7,7 @@ class fish : public animal {
     public:
         fish();
         fish(std:: string a, std:: string b, std:: string c);
-        fish(const fish & obg);
+        fish(const fish & obj);
         virtual ~fish();
 
         virtual std:: string getgenus();
@@ -22,12 +22,16 @@ class fish : public animal {
         virtual void setFIO(std::string data);
         virtual std:: string gethome();
         virtual std:: string getFIO();
+        virtual std:: string getname();
+        virtual void setname(std::string data);
 
 
         virtual void save(std::ofstream & file, bool bin = false);
         virtual void load(std::ifstream & file, bool bin = false);
 
         virtual void show();
+
+        virtual char gettype();
 
     private:
         std:: string genus;
