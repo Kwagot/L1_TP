@@ -1,6 +1,5 @@
 #include "animal.h"
 
-animal::animal()
-{
-
+char animal::gettype() {
+    return type;
 }

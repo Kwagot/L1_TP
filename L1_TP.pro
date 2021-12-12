@@ -7,6 +7,7 @@ SOURCES += \
         animal.cpp \
         bird.cpp \
         cat.cpp \
+        container.cpp \
         fish.cpp \
         main.cpp
 
@@ -14,4 +15,6 @@ HEADERS += \
     animal.h \
     bird.h \
     cat.h \
+    container.h \
+    exceptions.h \
     fish.h

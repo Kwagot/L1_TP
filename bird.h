@@ -3,34 +3,40 @@
 
 #include "animal.h"
 
-class bird : public animal
-{
-public:
-    bird();
-    bird(std:: string a, std:: string b, std:: string c, std:: string d);
-    bird(const bird & obg);
-    ~bird();
+class bird : public animal {
+    public:
+        bird();
+        bird(std:: string a, std:: string b, std:: string c, std:: string d);
+        bird(const bird & obg);
+        virtual ~bird();
 
-    std:: string genus;
-    std:: string color;
-    std:: string eat;
-    std:: string home;
-
-
-    virtual std:: string getgenus();
-    virtual std:: string getcolor();
-    virtual std:: string geteat();
-    virtual std:: string gethome();
+        virtual std::string getgenus();
+        virtual std::string getcolor();
+        virtual std::string geteat();
+        virtual std::string gethome();
 
 
-    virtual std:: string setgenus();
-    virtual std:: string setcolor();
-    virtual std:: string seteat();
-    virtual std:: string sethome();
+        virtual void setgenus(std::string data);
+        virtual void setcolor(std::string data);
+        virtual void seteat(std::string data);
+        virtual void sethome(std::string data);
 
-    virtual char gettype();
+        virtual std:: string getFIO();
+        virtual void setFIO(std::string data);
 
-    char type = 'b';
+        virtual void save(std::ofstream & file, bool bin = false);
+        virtual void load(std::ifstream & file, bool bin = false);
+
+        virtual void show();
+
+    private:
+
+        std:: string genus;
+        std:: string color;
+        std:: string eat;
+        std:: string home;
+
+        char type = 'b';
 
 };
 
